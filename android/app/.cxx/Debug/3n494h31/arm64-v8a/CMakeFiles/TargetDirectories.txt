@@ -1,0 +1,2 @@
+/Users/suresh/Desktop/pitch_perfect/android/app/.cxx/Debug/3n494h31/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/suresh/Desktop/pitch_perfect/android/app/.cxx/Debug/3n494h31/arm64-v8a/CMakeFiles/rebuild_cache.dir
