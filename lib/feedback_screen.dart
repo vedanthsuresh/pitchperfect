@@ -82,7 +82,6 @@ class _FeedbackScreenState extends State<FeedbackScreen>
         return;
       }
 
-
       final timestamps = [
         5000,
         10000,
@@ -136,7 +135,6 @@ class _FeedbackScreenState extends State<FeedbackScreen>
       String eyeContactFeedback =
           await promptGemini(content: [Content.multi(eyeContactPrompt)]);
 
-
       String contentFeedback = await promptGemini(content: [
         Content.data("audio/m4a", audioBytes!),
         Content.text("""
@@ -153,9 +151,9 @@ class _FeedbackScreenState extends State<FeedbackScreen>
             }
 
             Give me the feedbackForPerson as ${languageCode == 'es' ? 'Spanish' : 'English'}
+            Also list all the languages that were spoken in the audio at the very start at feedbackForPerson.
             """)
       ]);
-
 
       String enthusiasmFeedback = await promptGemini(content: [
         Content.data("audio/m4a", audioBytes!),
