@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
@@ -54,7 +55,7 @@ class VideoAudioRecorder {
         }
       }
     } catch (e) {
-      print('Error stopping recording: $e');
+      debugPrint('Error stopping recording: $e');
     }
     return null;
   }

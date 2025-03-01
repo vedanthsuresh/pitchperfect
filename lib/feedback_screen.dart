@@ -72,7 +72,6 @@ class _FeedbackScreenState extends State<FeedbackScreen>
 
       // Check if file exists
       if (!await audioFile.exists()) {
-        print("Audio file does not exist!");
         return;
       }
 
@@ -80,11 +79,9 @@ class _FeedbackScreenState extends State<FeedbackScreen>
 
       // Check if audioBytes is empty
       if (audioBytes == null || audioBytes!.isEmpty) {
-        print("Audio bytes are null or empty!");
         return;
       }
 
-      print("Audio file size: ${audioBytes!.length} bytes");
 
       final timestamps = [
         5000,
@@ -139,7 +136,6 @@ class _FeedbackScreenState extends State<FeedbackScreen>
       String eyeContactFeedback =
           await promptGemini(content: [Content.multi(eyeContactPrompt)]);
 
-      print("First");
 
       String contentFeedback = await promptGemini(content: [
         Content.data("audio/m4a", audioBytes!),
@@ -160,7 +156,6 @@ class _FeedbackScreenState extends State<FeedbackScreen>
             """)
       ]);
 
-      print("Second");
 
       String enthusiasmFeedback = await promptGemini(content: [
         Content.data("audio/m4a", audioBytes!),
@@ -187,7 +182,7 @@ class _FeedbackScreenState extends State<FeedbackScreen>
       });
       // ignore: empty_catches
     } catch (e) {
-      print("Error in getFeedback: $e");
+      debugPrint("Error in getFeedback: $e");
     }
   }
 

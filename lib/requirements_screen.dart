@@ -64,7 +64,7 @@ class _RequirementsScreenState extends State<RequirementsScreen>
   Future<void> loadData() async {
     final ideas = await promptGemini(content: [
       Content.text(
-          "Give me three commonly known ideas that are 3-5 words long or less separated by commas and each one starting with a capital letter with no periods that should be covered in a presentation about $presentationTopic")
+          "Give me three commonly known ideas that are 3-5 words long or less separated by commas with no spaces after every comma and each one starting with a capital letter with no periods that should be covered in a presentation about $presentationTopic. Example: Eat your fruits,balanced diet,portion control")
     ]);
     setState(() {
       requirements = ideas.toString().split(',');
@@ -168,8 +168,8 @@ class _RequirementsScreenState extends State<RequirementsScreen>
                                         MediaQuery.of(context).size.width - 80,
                                   ),
                                   child: Requirement(
-                                    requirementTitle: requirements[index],
-                                  ),
+                                      requirementTitle:
+                                          requirements[index].trim()),
                                 ),
                               ),
                             ),
